@@ -9,19 +9,40 @@
             padding: 0;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            font-family: 'Courier New', monospace;
         }
+        
+        /* Обманка — еле видна, по центру */
+        .fake-message {
+            color: #0a0a0a;  /* Почти чёрный, но если приглядеться — видно */
+            font-size: 18px;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+        
+        /* Настоящий ключ — абсолютно невидим */
         .hidden-key {
-            color: #000000;  /* Чёрный на чёрном */
+            color: #000000;
             font-size: 48px;
             font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <!-- Обманка (Base64) — видна при напряжении глаз -->
+    <div class="fake-message">
+        VGhpcyBpcyBub3Qgd2hhdCB5b3UncmUgbG9va2luZyBmb3IuIExvb2sgZGVlcGVyLg==
+    </div>
+    
+    <!-- Настоящий ключ — невидим, но выделяется -->
     <div class="hidden-key">
         STONE
     </div>
 </body>
-</html>            
+</html>
