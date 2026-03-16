@@ -1,96 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cryptix404</title>
     <style>
-        * {
+        body {
+            background-color: black;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: 'Courier New', monospace;
-            position: relative;
-            
-            /* Фон — картинка из Minecraft */
-            background-image: url('mc_background.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
         }
-        
-        /* Полупрозрачный слой поверх фона, чтобы текст читался */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);  /* Черный слой 70% прозрачности */
-            z-index: 1;
-        }
-        
-        /* Все содержимое поверх затемнения */
-        body > * {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .fake-message {
-            color: #2a2a2a;  /* Еле заметно */
-            font-size: 18px;
-            text-align: center;
-            max-width: 600px;
-            line-height: 1.5;
-            margin: 20px;
-            word-break: break-word;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 10px;
-            border-radius: 5px;
-        }
-        
         .hidden-key {
-            color: #000000;
+            color: #000000;  /* Чёрный на чёрном */
             font-size: 48px;
             font-weight: bold;
-            text-align: center;
-            margin-top: 50px;
-            user-select: text;
-        }
-        
-        img {
-            max-width: 80%;
-            margin-top: 30px;
-            border: 2px solid #333;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 3;
         }
     </style>
 </head>
 <body>
-    <!-- Фальшивка -->
-    <div class="fake-message">
-        VGhpcyBpcyBub3Qgd2hhdCB5b3UncmUgbG9va2luZyBmb3IuIExvb2sgZGVlcGVyLg==
-    </div>
-    
-    <!-- Невидимый ключ STONE -->
     <div class="hidden-key">
         STONE
     </div>
-    
-    <!-- Картинка со стеганографией -->
-    <img src="image.png" alt=" " />
 </body>
-</html>
+</html>            
