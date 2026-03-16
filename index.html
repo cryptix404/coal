@@ -12,7 +12,6 @@
         }
         
         body {
-            background-color: black;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -20,16 +19,44 @@
             align-items: center;
             font-family: 'Courier New', monospace;
             position: relative;
+            
+            /* Фон — картинка из Minecraft */
+            background-image: url('mc_background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        /* Полупрозрачный слой поверх фона, чтобы текст читался */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);  /* Черный слой 70% прозрачности */
+            z-index: 1;
+        }
+        
+        /* Все содержимое поверх затемнения */
+        body > * {
+            position: relative;
+            z-index: 2;
         }
         
         .fake-message {
-            color: #0a0a0a;
+            color: #2a2a2a;  /* Еле заметно */
             font-size: 18px;
             text-align: center;
             max-width: 600px;
             line-height: 1.5;
             margin: 20px;
             word-break: break-word;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
         }
         
         .hidden-key {
@@ -44,22 +71,26 @@
         img {
             max-width: 80%;
             margin-top: 30px;
-            border: 1px solid #111;
+            border: 2px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 3;
         }
     </style>
 </head>
 <body>
-    <!-- Первый слой: фальшивка -->
+    <!-- Фальшивка -->
     <div class="fake-message">
         VGhpcyBpcyBub3Qgd2hhdCB5b3UncmUgbG9va2luZyBmb3IuIExvb2sgZGVlcGVyLg==
     </div>
     
-    <!-- Второй слой: невидимый ключ STONE -->
+    <!-- Невидимый ключ STONE -->
     <div class="hidden-key">
         STONE
     </div>
     
-    <!-- Картинка со скрытым ключом OBSIDIAN -->
-    <img src="image.png" alt=" " />
+    <!-- Картинка со стеганографией -->
+    <img src="secret.png" alt=" " />
 </body>
 </html>
